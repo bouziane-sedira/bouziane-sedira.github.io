@@ -1,287 +1,152 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html lang="ar">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>بوزيان سديرة — تجارة واستيراد موثوقة</title>
-  <meta name="description" content="بوزيان سديرة — تجارة عامة، شراء وبيع، استيراد وتصدير داخل الجزائر وخارجها. شراكات موثوقة وصفقات مربحة." />
-  <meta name="author" content="بوزيان سديرة" />
-  <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://sedira12.github.io/sedira-website/" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sedira Bouziaine - تاجر موثوق</title>
+  <meta name="description" content="سديرة بوزيان - تاجر محترف في التجارة العامة، الاستيراد والتصدير داخل وخارج الجزائر. نعمل على الثقة والجودة لبناء علاقات طويلة الأمد.">
+  <meta name="keywords" content="سديرة بوزيان, Sedira Bouziaine, تاجر, تجارة عامة, استيراد, تصدير, الجزائر, Bouziane, تاجر موثوق">
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="بوزيان سديرة — تجارة واستيراد موثوقة" />
-  <meta property="og:description" content="تجارة عامة، شراء وبيع، استيراد وتصدير — خبرة وشبكات دولية. تواصل الآن لصفقات موثوقة." />
-  <meta property="og:url" content="https://sedira12.github.io/sedira-website/" />
-  <meta property="og:image" content="https://sedira12.github.io/sedira-website/logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <!-- أيقونة للموقع -->
+  <link rel="icon" href="logo.png" type="image/png">
 
-  <!-- Schema JSON-LD -->
+  <!-- Google Translate -->
+  <meta name="google" content="notranslate">
+
+  <!-- Schema.org structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Bouziane Sedira",
-    "alternateName": "بوزيان سديرة",
-    "url": "https://sedira12.github.io/sedira-website/",
-    "telephone": "+213676703770",
-    "email": "yy7505207@gmail.com",
-    "address": {"@type":"PostalAddress","addressCountry":"DZ"}
+    "name": "Sedira Bouziaine",
+    "alternateName": "سديرة بوزيان",
+    "url": "https://sedira12.github.io",
+    "logo": "https://sedira12.github.io/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+213676703770",
+      "contactType": "customer service",
+      "email": "yy7505207@gmail.com",
+      "areaServed": "DZ"
+    }
   }
   </script>
 
-  <!-- Palette variables + basic styles (kept compact for performance) -->
   <style>
-    :root{
-      --blue:#0d47a1;    /* primary blue */
-      --gold:#ffb300;    /* accent gold */
-      --bg:#f7f8fb;
-      --text:#222;
-      --muted:#666;
-      --maxw:1100px;
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: #f5f7fa;
+      color: #222;
+      text-align: center;
+      line-height: 1.6;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;font-family:Tahoma, Arial, "Cairo", sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;line-height:1.55}
-    header{background:linear-gradient(90deg,var(--blue),#1565c0);color:#fff;padding:18px 16px}
-    .container{max-width:var(--maxw);margin:0 auto;padding:0 16px}
-    .top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand img{width:56px;height:56px;object-fit:contain;border-radius:8px;background:#fff;padding:6px}
-    .brand h1{margin:0;font-size:20px;font-weight:800;letter-spacing:.4px}
-    .sub{opacity:.95;font-size:13px}
-    nav.primary{margin-top:12px;text-align:center}
-    nav.primary a{color:#fff;text-decoration:none;margin:0 10px;font-weight:700;font-size:14px}
-    main{max-width:var(--maxw);margin:18px auto;padding:0 16px}
-    .hero{background:#fff;border-radius:12px;padding:20px;box-shadow:0 8px 30px rgba(13,71,161,0.06);display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-    .hero-left{flex:1 1 360px}
-    .hero-right{flex:0 1 320px;text-align:center}
-    .kicker{display:inline-block;padding:6px 10px;background:linear-gradient(90deg,var(--gold),#ffca28);color:#111;border-radius:999px;font-weight:700;margin-bottom:10px}
-    h2{color:var(--blue);margin:0 0 8px}
-    p.lead{margin:0 0 12px;color:var(--muted)}
-    .cta{display:inline-block;background:var(--gold);color:#111;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:800;margin-right:8px}
-    .cta.secondary{background:transparent;color:#0b3a83;border:2px solid rgba(13,71,161,0.08)}
-    .whatsapp{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:800}
-    .grid{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-    .card{flex:1 1 280px;background:#fff;padding:14px;border-radius:10px;border:1px solid rgba(13,71,161,0.04);box-shadow:0 6px 16px rgba(13,71,161,0.04)}
-    .card h3{margin:0 0 8px;color:var(--blue)}
-    .muted{color:var(--muted);font-size:14px}
-    .testi{font-style:italic;background:linear-gradient(90deg,#fff,#fbfbff);padding:12px;border-radius:8px;border-left:4px solid var(--blue)}
-    footer{background:var(--blue);color:#fff;padding:16px;margin-top:20px;text-align:center;border-top:1px solid rgba(255,255,255,0.06)}
-    .contact-list{list-style:none;padding:0;margin:0;font-size:15px}
-    .contact-list li{padding:6px 0}
-    .lang-select{background:rgba(255,255,255,0.08);border:none;color:#fff;padding:8px;border-radius:8px;font-weight:700}
-    @media(max-width:900px){.hero{flex-direction:column}.hero-right{text-align:left}}
+    header {
+      background: linear-gradient(90deg, #0a3d62, #ffd700);
+      color: white;
+      padding: 2rem 1rem;
+    }
+    header img {
+      max-width: 120px;
+      display: block;
+      margin: 0 auto 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    header p {
+      margin: 0.5rem 0 0;
+      font-size: 1.2rem;
+    }
+    nav {
+      margin: 1rem 0;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: #0a3d62;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    section {
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .contact {
+      background: #fff;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+    .contact p {
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+    }
+    .contact span {
+      font-weight: bold;
+    }
+    footer {
+      margin-top: 2rem;
+      padding: 1rem;
+      background: #0a3d62;
+      color: white;
+      font-size: 0.9rem;
+    }
+    .whatsapp {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #25d366;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="container top">
-    <div class="brand" aria-hidden="false">
-      <!-- ضع شعارك هنا باسم logo.png في جذر المستودع -->
-      <img src="logo.png" alt="شعار الشركة (قُم برفع logo.png)" onerror="this.style.display='none'">
-      <div>
-        <h1 id="site-title">بوزيان سديرة</h1>
-        <div class="sub">تجارة عامة · شراء وبيع · استيراد وتصدير · شراكات دولية</div>
-      </div>
-    </div>
+  <header>
+    <img src="logo.png" alt="شعار Sedira Bouziaine">
+    <h1>Sedira Bouziaine - سديرة بوزيان</h1>
+    <p>ثقة - جودة - تجارة عامة داخل وخارج الوطن</p>
+  </header>
 
-    <div style="display:flex;gap:8px;align-items:center">
-      <select id="lang-select" class="lang-select" aria-label="اختر اللغة">
-        <option value="ar">العربية</option>
-        <option value="en">English</option>
-        <option value="fr">Français</option>
-      </select>
-      <button id="load-translate" style="background:transparent;border:1px solid rgba(255,255,255,0.12);color:#fff;padding:8px;border-radius:8px;font-weight:700;cursor:pointer">تهيئة ترجمة Google</button>
-    </div>
-  </div>
-
-  <nav class="primary container" role="navigation" aria-label="روابط التنقل">
-    <a href="#home">الرئيسية</a>
-    <a href="#services">الخدمات</a>
-    <a href="#projects">المشاريع</a>
-    <a href="#testimonials">آراء العملاء</a>
+  <nav>
+    <a href="#about">من نحن</a>
+    <a href="#services">خدماتنا</a>
     <a href="#contact">اتصل بنا</a>
   </nav>
-</header>
 
-<main class="container" id="home">
-  <section class="hero" role="region" aria-labelledby="hero-title">
-    <div class="hero-left">
-      <div class="kicker">صفقات مربحة — ثقة واستقرار</div>
-      <h2 id="hero-title">شريكك الموثوق في التجارة والاستيراد</h2>
-      <p class="lead" id="hero-lead">
-        نركّز على شراء وبيع السلع بكفاءة، بناء سلاسل توريد قوية، وتأمين صفقات مربحة داخل الجزائر وخارجها. 
-        نبحث عن شركاء جدّيين لتوسيع الأعمال والدخول إلى أسواق جديدة.
-      </p>
-
-      <div style="margin-top:12px">
-        <a class="cta" id="contact-cta" href="mailto:yy7505207@gmail.com">اطلب عرض أسعار</a>
-        <a class="whatsapp" id="whatsapp-btn" href="https://wa.me/213676703770?text=مرحبًا%20أريد%20التحدث%20بشأن%20صفقة%20تجارية" target="_blank" rel="noopener">
-          تواصل عبر واتساب
-        </a>
-      </div>
-
-      <ul class="muted" style="margin-top:12px;padding-left:18px">
-        <li>✔ علاقات موثوقة مع موردين محليين ودوليين</li>
-        <li>✔ تسليم سريع وخدمات متابَعة بعد البيع</li>
-        <li>✔ شروط تنافسية تسهّل الشراكات والاستثمار</li>
-      </ul>
-    </div>
-
-    <div class="hero-right">
-      <!-- صورة أو شعار بصيغة عالية الدقة، lazy loading -->
-      <img src="https://via.placeholder.com/360x240?text=Trading+&+Import" alt="تجارة واستيراد" loading="lazy" style="border-radius:8px;max-width:100%">
-      <p class="muted" style="margin-top:8px">خدمة عملاء متاحة على مدار الأسبوع — اتصل الآن</p>
-    </div>
-  </section>
-
-  <!-- الخدمات -->
-  <section id="services" style="margin-top:18px">
-    <h2>خدماتنا</h2>
-    <div class="grid" aria-hidden="false">
-      <div class="card">
-        <h3>تجارة عامة</h3>
-        <p class="muted">توريد وبيع المنتجات المحلية والدولية بجودة ومواصفات مطابقة للاتفاق.</p>
-      </div>
-      <div class="card">
-        <h3>استيراد وتصدير</h3>
-        <p class="muted">شراكات لوجستية وتجارية لاستيراد السلع بأفضل الشروط والأسعار التنافسية.</p>
-      </div>
-      <div class="card">
-        <h3>عقود وتوريد بالجملة</h3>
-        <p class="muted">إدارة عقود توريد طويلة الأجل مع ضمانات جودة وتسليم منتظم.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- المشاريع -->
-  <section id="projects" style="margin-top:18px">
-    <h2>نماذج مشاريع سابقة</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>توريد مواد غذائية</h3>
-        <p class="muted">مشروع توريد منتجات غذائية محلية ودولية لموزعين في الجزائر.</p>
-      </div>
-      <div class="card">
-        <h3>استيراد معدات صناعية</h3>
-        <p class="muted">استيراد وتسليم معدات لمصانع ومشروعات صناعية مع خدمات الضمان.</p>
-      </div>
-      <div class="card">
-        <h3>شراكات تجارية</h3>
-        <p class="muted">إقامة علاقات تجارية وتمثيل منتجات لشركات خارج الوطن.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section id="testimonials" style="margin-top:18px">
-    <h2>آراء العملاء</h2>
-    <div class="grid">
-      <div class="card testi">
-        "تعاملنا مع بوزيان سديرة في عمليات توريد معقدة — الالتزام والجودة كانا فوق التوقعات، وساعدونا في حلّ قضايا لوجستية بسرعة." — موزّع في الجزائر
-      </div>
-      <div class="card testi">
-        "اتفاق تجاري مع فريق محترف وشفاف، تسليم في المواعيد والأسعار عادلة. نوصي به كشريك طويل الأمد." — تاجر دولي
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" style="margin-top:18px">
-    <h2>اتصل الآن</h2>
-    <ul class="contact-list">
-      <li><strong>الهاتف:</strong> <a href="tel:+213676703770">+213 676 703 770</a></li>
-      <li><strong>البريد الإلكتروني:</strong> <a href="mailto:yy7505207@gmail.com">yy7505207@gmail.com</a></li>
-      <li><strong>الموقع:</strong> تبسة، الجزائر</li>
-    </ul>
-
-    <p style="margin-top:12px">
-      <a class="cta" href="mailto:yy7505207@gmail.com">أرسل رسالة</a>
-      <a class="whatsapp" href="https://wa.me/213676703770?text=مرحبًا%20بوزيان%20سديرة%2C%20أرغب%20بالتعاون%20التجاري" target="_blank" rel="noopener">واتساب مباشر</a>
+  <section id="about">
+    <h2>من نحن</h2>
+    <p>
+      نحن شركة <strong>Sedira Bouziaine</strong> المتخصصة في التجارة العامة، 
+      الاستيراد والتصدير داخل الجزائر وخارجها. نركز على الجودة والمصداقية 
+      لبناء علاقات طويلة الأمد مع عملائنا.
     </p>
   </section>
-</main>
 
-<footer>
-  <div class="container">
-    <p style="margin:6px 0 0;font-weight:700">© 2025 بوزيان سديرة — تجارة عامة واستيراد</p>
-    <p style="margin:6px 0 0;font-size:13px;opacity:.9">رقم الهاتف: <a href="tel:+213676703770" style="color:#fff;text-decoration:underline">+213 676 703 770</a> · البريد: <a href="mailto:yy7505207@gmail.com" style="color:#fff;text-decoration:underline">yy7505207@gmail.com</a></p>
-  </div>
-</footer>
+  <section id="services">
+    <h2>خدماتنا</h2>
+    <p>💼 تجارة عامة - بيع وشراء داخل الجزائر وخارجها.</p>
+    <p>🌍 استيراد وتصدير مختلف المنتجات.</p>
+    <p>🤝 شراكات تجارية مع ثقة وشفافية.</p>
+  </section>
 
-<!-- ترجمة داخلية + تحميل Google Translate عند الطلب -->
-<script>
-  // ترجمة نصوص بسيطة محليًا (سريعة ولا تنقص أداء الصفحة)
-  const translations = {
-    ar: {
-      lang: 'ar',
-      dir: 'rtl',
-      title: 'بوزيان سديرة — تجارة واستيراد موثوقة',
-      heroLead: 'نركّز على شراء وبيع السلع بكفاءة، بناء سلاسل توريد قوية، وتأمين صفقات مربحة داخل الجزائر وخارجها.',
-      ctaMail: 'اطلب عرض أسعار',
-      whatsappText: 'تواصل عبر واتساب'
-    },
-    en: {
-      lang: 'en',
-      dir: 'ltr',
-      title: 'Bouziane Sedira — Trusted Trading & Import',
-      heroLead: 'We focus on efficient buying & selling, building solid supply chains and securing profitable deals inside Algeria and abroad.',
-      ctaMail: 'Request Quote',
-      whatsappText: 'Contact via WhatsApp'
-    },
-    fr: {
-      lang: 'fr',
-      dir: 'ltr',
-      title: 'Bouziane Sedira — Commerce & Import Fiable',
-      heroLead: "Nous assurons l'achat et la vente efficaces, la constitution de chaînes d'approvisionnement solides et la sécurisation d'accords rentables en Algérie et à l'international.",
-      ctaMail: 'Demander un devis',
-      whatsappText: 'Contactez sur WhatsApp'
-    }
-  };
+  <section id="contact" class="contact">
+    <h2>📞 اتصل بنا</h2>
+    <p>📞 <span>الهاتف:</span> +213 676 703 770</p>
+    <p>📧 <span>البريد الإلكتروني:</span> yy7505207@gmail.com</p>
+    <p>📍 <span>الموقع:</span> الجزائر</p>
+    <a class="whatsapp" href="https://wa.me/213676703770" target="_blank">💬 تواصل عبر واتساب</a>
+  </section>
 
-  function setLang(code){
-    const t = translations[code] || translations.ar;
-    document.documentElement.lang = t.lang;
-    document.documentElement.dir = t.dir;
-    // texts
-    document.getElementById('site-title').textContent = (t.lang === 'ar') ? 'بوزيان سديرة' : 'Bouziane Sedira';
-    document.getElementById('hero-lead').textContent = t.heroLead;
-    document.getElementById('contact-cta').textContent = t.ctaMail;
-    document.getElementById('whatsapp-btn').textContent = t.whatsappText;
-    // store
-    try{ localStorage.setItem('site_lang', code); }catch(e){}
-    // adjust layout direction styling
-    if(t.dir === 'rtl'){ document.body.style.textAlign = 'right'; } else { document.body.style.textAlign = 'left'; }
-  }
-
-  // init language select
-  const sel = document.getElementById('lang-select');
-  sel.addEventListener('change', (e)=> setLang(e.target.value));
-  document.addEventListener('DOMContentLoaded', ()=>{
-    const pref = localStorage.getItem('site_lang') || 'ar';
-    sel.value = pref;
-    setLang(pref);
-  });
-
-  // Load Google Translate only when user requests (improves PageSpeed)
-  document.getElementById('load-translate').addEventListener('click', function(){
-    if(window.google && window.google.translate) { alert('ترجمة Google مُهيأة بالفعل'); return; }
-    const s = document.createElement('script');
-    s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-    s.defer = true;
-    document.body.appendChild(s);
-    // callback (global)
-    window.googleTranslateElementInit = function(){
-      new google.translate.TranslateElement({pageLanguage: 'ar', includedLanguages: 'ar,en,fr', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-    };
-    this.textContent = 'ترجمة Google مُحمّلة';
-    this.disabled = true;
-  });
-
-</script>
+  <footer>
+    © 2025 Sedira Bouziaine – جميع الحقوق محفوظة
+  </footer>
 
 </body>
 </html>
