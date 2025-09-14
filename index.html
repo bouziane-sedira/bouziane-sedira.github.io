@@ -3,18 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>بوزيان سديرة - الموقع الرسمي</title>
-  <meta name="description" content="الموقع الرسمي لبوزيان سديرة، تاجر ورجل أعمال. مرحباً بكم في صفحتي حيث تجدون آخر الأخبار والمشاريع.">
-  <meta name="author" content="بوزيان سديرة" />
+  <title>سديرة بوزيان - الموقع الرسمي</title>
+  <meta name="description" content="الموقع الرسمي لسديرة بوزيان، تاجر ورجل أعمال جزائري. مرحباً بكم في صفحتي حيث تجدون آخر الأخبار والمشاريع وطرق الاتصال.">
+  <meta name="author" content="سديرة بوزيان" />
 
-  <!-- لغات أخرى (Google يفهم هذه الروابط) -->
-  <link rel="alternate" href="https://sedira12.github.io/sedira-website/" hreflang="ar" />
-  <link rel="alternate" href="https://sedira12.github.io/sedira-website/" hreflang="en" />
-  <link rel="alternate" href="https://sedira12.github.io/sedira-website/" hreflang="fr" />
+  <!-- لغات أخرى -->
+  <link rel="alternate" hreflang="ar" href="https://sedira12.github.io/sedira/" />
+  <link rel="alternate" hreflang="en" href="https://sedira12.github.io/sedira/?lang=en" />
+  <link rel="alternate" hreflang="fr" href="https://sedira12.github.io/sedira/?lang=fr" />
 
   <!-- تحسين الأمان -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#2c3e50" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "سديرة بوزيان",
+    "jobTitle": "رجل أعمال وتاجر",
+    "telephone": "+213676703770",
+    "email": "yy7505207@gmail.com",
+    "url": "https://sedira12.github.io/sedira/",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "DZ"
+    }
+  }
+  </script>
 
   <style>
     body {
@@ -56,11 +73,15 @@
       margin-top: 20px;
       font-size: 14px;
     }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>بوزيان سديرة</h1>
+    <h1>سديرة بوزيان</h1>
     <nav>
       <a href="#about">من أنا</a>
       <a href="#projects">المشاريع</a>
@@ -72,7 +93,7 @@
     <section id="about">
       <h2>من أنا</h2>
       <p>
-        اسمي <strong>بوزيان سديرة</strong>، تاجر ورجل أعمال. أشارك هنا معلومات عن مشاريعي وخدماتي 
+        اسمي <strong>سديرة بوزيان</strong>، تاجر ورجل أعمال من الجزائر. أشارك هنا معلومات عن مشاريعي وخدماتي 
         حتى يتمكن الجميع من معرفة أعمالي بسهولة عبر الإنترنت.
       </p>
     </section>
@@ -83,16 +104,34 @@
         أعمل في عدة مجالات تجارية. قريباً ستجدون تفاصيل أكثر حول المشاريع الجارية 
         وكيفية الاستفادة منها.
       </p>
+      <!-- مثال لصورة مع Lazy Loading -->
+      <img src="https://via.placeholder.com/800x400" alt="مشروع تجاري" loading="lazy">
     </section>
 
     <section id="contact">
       <h2>اتصل بي</h2>
-      <p>يمكنكم التواصل معي عبر البريد الإلكتروني: <a href="mailto:example@email.com">example@email.com</a></p>
+      <p>
+        📞 الهاتف: <a href="tel:+213676703770">+213676703770</a><br>
+        📧 البريد الإلكتروني: <a href="mailto:yy7505207@gmail.com">yy7505207@gmail.com</a>
+      </p>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 جميع الحقوق محفوظة - بوزيان سديرة</p>
+    <p>© 2025 جميع الحقوق محفوظة - سديرة بوزيان</p>
   </footer>
+
+  <!-- ترجمة قوقل (مؤجلة التحميل) -->
+  <div id="google_translate_element"></div>
+  <script defer type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'ar',
+        includedLanguages: 'ar,en,fr',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script defer src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
