@@ -245,6 +245,31 @@
     const sel=document.getElementById('lang-select');
     sel.addEventListener('change',(e)=>setLang(e.target.value));
     document.addEventListener('DOMContentLoaded',()=>{try{const l=localStorage.getItem('site_lang')||'ar';sel.value=l;setLang(l);}catch(e){setLang('ar');}});
-  </script>
+ </script>
+  <!-- تحسين ظهور الاسم بالعربية في محركات البحث -->
+<section style="display:none;">
+  <h1>بوزيان سديرة (Bouziane Sedira)</h1>
+  <p>
+    الموقع الرسمي لـ <strong>بوزيان سديرة</strong>، تاجر جزائري متخصص في
+    التجارة العامة، الاستيراد والتصدير.  
+    يعرف أيضًا باسم <em>Bouziane Sedira</em> على محركات البحث.
+  </p>
+</section>
+
+<!-- Schema.org مع دعم الاسم بالعربية -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Bouziane Sedira",
+  "alternateName": "بوزيان سديرة",
+  "url": "https://sedira12.github.io/sedira-website/",
+  "sameAs": [
+    "https://www.google.com/search?q=بوزيان+سديرة",
+    "https://www.google.com/search?q=Bouziane+Sedira"
+  ]
+}
+</script>
+
 </body>
 </html>
