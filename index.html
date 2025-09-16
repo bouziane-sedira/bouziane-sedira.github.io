@@ -107,36 +107,35 @@
 <header>
   
 <div class="container top">
-  <style>
-    .brand { display:flex; align-items:center; gap:12px; }
-    .brand-title { display:flex; align-items:center; gap:6px; }
-    .brand-title h1 {
-      margin:0;
-      font-size:20px;
-      font-weight:800;
-      line-height:1;
-    }
-    .logo-inline {
-      width:24px;           /* حجم صغير مثل إيموجي */
-      height:24px;
-      object-fit:cover;
-      border-radius:50%;    /* دائري (ضع 0 لو تحب مربع) */
-      border:0;
-      box-shadow:none;
-    }
-    .sub { opacity:.95; font-size:13px; margin-top:4px; }
-  </style>
-
   <div class="brand">
-    <div>
-      <div class="brand-title">
-        <img src="images/logo.png" alt="شعار الشركة" class="logo-inline">
-        <h1 id="site-title">Bouziane Sedira</h1>
-      </div>
-      <div class="sub">تجارة عامة · شراء وبيع · استيراد وتصدير · شراكات دولية</div>
+    <div class="brand-title">
+      <img src="images/logo.png" alt="شعار الشركة" class="logo-inline">
+      <h1 id="site-title">Bouziane Sedira</h1>
     </div>
+    <div class="sub">تجارة عامة · شراء وبيع · استيراد وتصدير · شراكات دولية</div>
   </div>
 </div>
+
+<style>
+  .brand { display:flex; flex-direction:column; align-items:flex-start; }
+  .brand-title { display:flex; align-items:center; gap:6px; }
+  .brand-title h1 {
+    margin:0;
+    font-size:20px;
+    font-weight:800;
+    line-height:1;
+  }
+  .logo-inline {
+    width:22px;       /* شعار صغير مثل أيقونة */
+    height:22px;
+    border-radius:50%; /* إذا تحب مربع: غيرها 0 */
+    object-fit:cover;
+    border:0;
+    box-shadow:none;
+  }
+  .sub { opacity:.95; font-size:13px; margin-top:4px; }
+</style>
+
 
 
       <div style="display:flex;gap:8px;align-items:center">
