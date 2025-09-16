@@ -106,16 +106,29 @@
   
 <header>
   
+ <div class="container top">
+  <style>
+    .logo-circle {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;              /* 🔵 شكل دائري */
+      object-fit: cover;
+      border: 2px solid #fff;          /* إطار أبيض */
+      box-shadow: 0 0 6px rgba(0,0,0,0.25); /* ظل خفيف */
+      vertical-align: middle;
+      margin-left: 8px;
+    }
+  </style>
 
-  <div class="container top">
-    <div class="brand">
-      <img src="images/logo.png" alt="شعار الشركة" style="width:55px; height:55px; border-radius:50%; vertical-align:middle; margin-left:8px;">
-      <div>
-        <h1 id="site-title">Bouziane Sedira</h1>
-        <div class="sub">تجارة عامة · شراء وبيع · استيراد وتصدير · شراكات دولية</div>
-      </div>
+  <div class="brand">
+    <img src="images/logo.png" alt="شعار الشركة" class="logo-circle">
+    <div>
+      <h1 id="site-title">Bouziane Sedira</h1>
+      <div class="sub">تجارة عامة · شراء وبيع · استيراد وتصدير · شراكات دولية</div>
     </div>
   </div>
+</div>
+
 
 
       <div style="display:flex;gap:8px;align-items:center">
