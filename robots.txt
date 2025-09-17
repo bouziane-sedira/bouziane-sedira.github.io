@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://sedira12.github.io/sedira-website/sitemap.xml
+
+Sitemap: https://bouziane-sedira.github.io/sitemap.xml
