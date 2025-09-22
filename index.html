@@ -269,6 +269,275 @@
   ]
 }
 </script>
+<!-- Chatbot + Admin panel (Firebase) -->
+<style>
+  /* بوت أساسي */
+  #chat-root { position: fixed; bottom: 20px; right: 20px; z-index: 9999; font-family: Arial, sans-serif; }
+  #chat-toggle { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg,#d4af37,#b8860b); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 8px 30px rgba(0,0,0,.25); }
+  #chat-window { width: 380px; height: 520px; background: #fff; border-radius: 14px; box-shadow:0 18px 60px rgba(0,0,0,.25); display:none; flex-direction:column; overflow:hidden; margin-top:10px; }
+  #chat-header { background: linear-gradient(135deg,#111,#0b0b0b); color:#d4af37; padding:12px; font-weight:700; display:flex; align-items:center; justify-content:center; position:relative; }
+  #adminLoginBtn { position:absolute; left:12px; top:8px; background:#28a745; border:none; color:#fff; padding:6px 10px; border-radius:8px; cursor:pointer; font-size:12px; }
+  #chat-messages { flex:1; padding:12px; overflow:auto; display:flex; flex-direction:column; gap:8px; background:linear-gradient(180deg,#fff,#fcfcfa); }
+  .bubble { max-width:78%; padding:10px 12px; border-radius:12px; line-height:1.4; word-wrap:break-word; }
+  .visitor { align-self:flex-end; background: #fff5d7; border:1px solid rgba(212,175,55,.15); }
+  .bot { align-self:flex-start; background:#f6f6f7; border:1px solid #e8e8e8; }
+  .adminMsg { align-self:flex-start; background:#e7f7fe; border:1px solid rgba(0,119,182,.12); font-weight:600; }
+  #chat-input { display:flex; border-top:1px solid #eee; padding:10px; gap:8px; }
+  #chat-input input { flex:1; padding:10px; border-radius:8px; border:1px solid #eee; outline:none; }
+  #chat-input button { background:linear-gradient(135deg,#d4af37,#b8860b); border:none; padding:10px 14px; border-radius:8px; cursor:pointer; font-weight:700; }
 
+  /* لوحة الأدمن داخل النافذة */
+  #admin-panel { display:none; border-top:1px solid #eee; padding:10px; background:#fffaf0; max-height:220px; overflow:auto; }
+  .conv-btn { display:block; width:100%; text-align:left; padding:8px; margin-bottom:6px; border-radius:8px; background:#fff; border:1px solid #eee; cursor:pointer; }
+  .conv-btn.active { background:#f0f8ff; border-color:#bcdffd; }
+  #admin-info { font-size:13px; color:#333; margin-bottom:8px; }
+</style>
+
+<div id="chat-root">
+  <div id="chat-toggle" title="فتح بوت الدعم">💬</div>
+
+  <div id="chat-window" role="dialog" aria-label="بوت الدعم">
+    <div id="chat-header">
+      <button id="adminLoginBtn">دخول الأدمن</button>
+      🤖 بوت الدعم — Bouziane Sedira
+    </div>
+
+    <div id="chat-messages"></div>
+
+    <div id="admin-panel">
+      <div id="admin-info">قائمة المحادثات (اختَر زائر لعرض المحادثة):</div>
+      <div id="convList"></div>
+    </div>
+
+    <div id="chat-input">
+      <input id="chatText" placeholder="اكتب رسالتك..." aria-label="رسالة" />
+      <button id="chatSend">إرسال</button>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+  // --------- imports (Firebase modular) ----------
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+  import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+  import {
+    getFirestore, collection, addDoc, query, where, orderBy, onSnapshot, serverTimestamp, getDocs
+  } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+  // --------- ضع هنا firebaseConfig من مشروعك ----------
+  const firebaseConfig = {
+    apiKey: "AIzaSyAAIqJ6i0qiGH7ZmmVa2L3YFkbFKDJ_ftA",
+    authDomain: "bouziane-sedira.firebaseapp.com",
+    projectId: "bouziane-sedira",
+    storageBucket: "bouziane-sedira.firebasestorage.app",
+    messagingSenderId: "608277985789",
+    appId: "1:608277985789:web:44bb9f50b7e26e225b4194"
+  };
+
+  // --------- init Firebase ----------
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+
+  // --------- DOM ----------
+  const chatToggle = document.getElementById('chat-toggle');
+  const chatWindow = document.getElementById('chat-window');
+  const messagesDiv = document.getElementById('chat-messages');
+  const chatText = document.getElementById('chatText');
+  const chatSend = document.getElementById('chatSend');
+  const adminBtn = document.getElementById('adminLoginBtn');
+  const adminPanel = document.getElementById('admin-panel');
+  const convList = document.getElementById('convList');
+  const adminInfo = document.getElementById('admin-info');
+
+  // --------- state ----------
+  const ADMIN_PASS = "0933112";
+  let isAdmin = false;
+  let currentVisitorId = null; // for admin: which conversation currently viewing
+  let localVisitorId = localStorage.getItem('visitorId');
+  if (!localVisitorId) {
+    localVisitorId = "v_" + Math.random().toString(36).slice(2, 9);
+    localStorage.setItem('visitorId', localVisitorId);
+  }
+
+  // Open/close widget
+  chatToggle.addEventListener('click', () => {
+    chatWindow.style.display = chatWindow.style.display === 'flex' ? 'none' : 'flex';
+    if (chatWindow.style.display === 'flex') {
+      // when opening, ensure we show correct mode
+      renderMode();
+    }
+  });
+
+  // Sign in anonymously so Firestore usage can be secured by rules (if set)
+  signInAnonymously(auth).catch(e => console.warn('anon sign-in:', e));
+
+  // Utility: add bubble to UI
+  function pushMessageToUI(sender, text) {
+    const el = document.createElement('div');
+    el.className = 'bubble ' + (sender === 'user' ? 'visitor' : (sender === 'bot' ? 'bot' : 'adminMsg'));
+    el.textContent = (sender === 'admin' ? 'أدمن: ' : '') + text;
+    messagesDiv.appendChild(el);
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+  }
+
+  // ---------- Firestore helpers ----------
+  const allMessagesCol = collection(db, 'messages');
+
+  // add message document
+  async function saveMessage(visitorId, sender, text) {
+    try {
+      await addDoc(allMessagesCol, {
+        visitorId,
+        sender,
+        text,
+        timestamp: serverTimestamp()
+      });
+    } catch (e) {
+      console.error('saveMessage err', e);
+    }
+  }
+
+  // bot simple reply (runs serverless client-side)
+  async function botReply(visitorId, userText) {
+    // do not auto-reply if admin sent message in this conversation
+    // simplistic rules:
+    let reply = "👋 مرحباً! كيف أقدر أساعدك؟";
+    const t = (userText || '').toLowerCase();
+    if (t.includes('مرحبا') || t.includes('سلام')) reply = "✨ أهلاً وسهلاً! كيف أقدر أساعدك اليوم؟";
+    else if (t.includes('سعر') || t.includes('ثمن')) reply = "أي منتج تقصده؟ أعطني اسم المنتج أو وصفه.";
+    else if (t.includes('شحن') || t.includes('توصيل')) reply = "نقدم خدمة التوصيل داخل الجزائر، أي مدينة أنت؟";
+
+    // save bot reply
+    await saveMessage(visitorId, 'bot', reply);
+  }
+
+  // ---------- listener logic ----------
+  let unsubscribeVisitor = null;
+  let unsubscribeAdminView = null;
+
+  // For normal visitor: listen only to their visitorId
+  function listenVisitorMessages(visitorId) {
+    if (unsubscribeVisitor) unsubscribeVisitor();
+    const q = query(allMessagesCol, where('visitorId', '==', visitorId), orderBy('timestamp'));
+    unsubscribeVisitor = onSnapshot(q, snapshot => {
+      messagesDiv.innerHTML = '';
+      snapshot.forEach(doc => {
+        const d = doc.data();
+        pushMessageToUI(d.sender, d.text);
+      });
+    });
+  }
+
+  // For admin: show messages for selected visitorId
+  function listenAdminConversation(visitorId) {
+    if (unsubscribeAdminView) unsubscribeAdminView();
+    adminPanel.style.display = 'block';
+    const q = query(allMessagesCol, where('visitorId', '==', visitorId), orderBy('timestamp'));
+    unsubscribeAdminView = onSnapshot(q, snapshot => {
+      messagesDiv.innerHTML = '';
+      snapshot.forEach(doc => {
+        const d = doc.data();
+        pushMessageToUI(d.sender, d.text);
+      });
+    });
+  }
+
+  // Admin: list all distinct visitorIds (simple client-side set)
+  async function refreshConversationsList() {
+    convList.innerHTML = 'جارٍ التحميل...';
+    try {
+      const q = query(allMessagesCol, orderBy('timestamp'));
+      const snap = await getDocs(q);
+      const set = new Set();
+      snap.forEach(doc => {
+        const d = doc.data();
+        if (d && d.visitorId) set.add(d.visitorId);
+      });
+      convList.innerHTML = '';
+      if (set.size === 0) {
+        convList.innerHTML = '<div class="small">لا توجد محادثات حتى الآن.</div>';
+      } else {
+        Array.from(set).reverse().forEach(id => {
+          const b = document.createElement('button');
+          b.className = 'conv-btn' + (id === currentVisitorId ? ' active' : '');
+          b.textContent = 'محادثة ' + id;
+          b.onclick = () => {
+            currentVisitorId = id;
+            // highlight
+            Array.from(convList.children).forEach(ch => ch.classList.remove('active'));
+            b.classList.add('active');
+            listenAdminConversation(id);
+            adminInfo.textContent = 'تعرض المحادثة: ' + id + ' — يمكنك الرد كأدمن هنا.';
+          };
+          convList.appendChild(b);
+        });
+      }
+    } catch (e) {
+      convList.innerHTML = 'خطأ في جلب المحادثات';
+      console.error(e);
+    }
+  }
+
+  // ---------- UI behaviors ----------
+  function renderMode() {
+    if (isAdmin) {
+      adminPanel.style.display = 'block';
+      refreshConversationsList();
+      // if no specific conversation selected, select latest visitor (if exists)
+      if (currentVisitorId) {
+        listenAdminConversation(currentVisitorId);
+      } else {
+        // listen to all messages and let admin choose
+        messagesDiv.innerHTML = '<div style="color:#666">اختر محادثة من القائمة اليسرى...</div>';
+      }
+    } else {
+      adminPanel.style.display = 'none';
+      // normal visitor only sees own conversation
+      currentVisitorId = null;
+      if (unsubscribeAdminView) { unsubscribeAdminView(); unsubscribeAdminView = null; }
+      listenVisitorMessages(localVisitorId);
+    }
+  }
+
+  // Admin login button click
+  adminBtn.addEventListener('click', async () => {
+    const p = prompt('أدخل كلمة سر الأدمن:');
+    if (p === ADMIN_PASS) {
+      isAdmin = true;
+      alert('✅ تم تسجيل الدخول كأدمن');
+      renderMode();
+    } else {
+      alert('❌ كلمة السر غير صحيحة');
+    }
+  });
+
+  // Send message (either visitor sending to their own conversation, or admin sending to selected conversation)
+  chatSend.addEventListener('click', async () => {
+    const text = (chatText.value || '').trim();
+    if (!text) return;
+    if (isAdmin) {
+      if (!currentVisitorId) {
+        alert('اختر محادثة من قائمة المحادثات أولاً.');
+        return;
+      }
+      await saveMessage(currentVisitorId, 'admin', text);
+    } else {
+      await saveMessage(localVisitorId, 'user', text);
+      // bot will reply via listener (we also trigger botReply)
+      await botReply(localVisitorId, text);
+    }
+    chatText.value = '';
+  });
+
+  // Enter to send
+  chatText.addEventListener('keypress', e => { if (e.key === 'Enter') chatSend.click(); });
+
+  // Start: show visitor messages by default
+  renderMode();
+
+  // Clean up on close/hide? not necessary here; listeners handle replacing
+</script>
+ 
 </body>
 </html>
