@@ -3,93 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>من نحن</title>
+  <title>من نحن - بوزيان سديرة</title>
   <style>
     body {
-      font-family: "Tajawal", sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f8f9fa;
-      color: #222;
-    }
-
-    header {
-      background: #0d47a1;
-      color: white;
-      text-align: center;
-      padding: 25px;
-      font-size: 26px;
-      font-weight: bold;
-    }
-
-    .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 40px;
-      max-width: 1100px;
-      margin: auto;
-      gap: 30px;
-    }
-
-    .container img {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 50%;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    .content {
-      flex: 1;
-      font-size: 18px;
+      font-family: "Tajawal", sans-serif;
+      background-color: #f4f6f9;
+      color: #333;
       line-height: 1.8;
     }
-
-    .content h2 {
-      margin-bottom: 15px;
-      color: #0d47a1;
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 15px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
     }
-
-    .back-btn {
+    .container {
+      max-width: 950px;
+      margin: 40px auto;
+      padding: 25px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 15px auto;
       display: block;
-      width: fit-content;
-      margin: 30px auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      border: 3px solid #003366;
+    }
+    h1 {
+      color: #003366;
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 16px;
+      text-align: justify;
+      margin-bottom: 15px;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #003366;
+    }
+    .btn-back {
+      display: block;
+      text-align: center;
+      margin: 30px auto 0;
       padding: 12px 25px;
-      background: #0d47a1;
+      font-size: 16px;
+      background-color: #003366;
       color: white;
       text-decoration: none;
       border-radius: 8px;
-      font-weight: bold;
       transition: 0.3s;
+      width: fit-content;
     }
-
-    .back-btn:hover {
-      background: #1565c0;
+    .btn-back:hover {
+      background-color: #00509e;
     }
   </style>
 </head>
 <body>
+
   <header>من نحن</header>
 
   <div class="container">
     <!-- صورتك الشخصية -->
-    <img src="صور/IMG_20250913_214745.png" alt="صورتي">
+    <img src="images/IMG_20250913_214745.png" alt="صورة شخصية" class="profile-pic">
 
-    <div class="content">
-      <h2>تعريف بالشركة</h2>
-      <p>
-        أنا <strong>بوزيان سديرة</strong>، تاجر عام موثق ووسيط تجاري موثوق.  
-        أعمل في مجال <strong>البيع والشراء</strong>، مع خبرة في الاستيراد والتصدير،  
-        وأسعى دائمًا لتوفير منتجات أصلية وموثوقة لزبائني.  
-        أضع خبرتي بين أيديكم لتسهيل اقتناء السلع بأمان واحترافية.
-      </p>
-    </div>
+    <h1>بوزيان سديرة</h1>
+    <p>
+      أنا <span class="highlight">تاجر عام موثق</span> و<span class="highlight">وسيط تجاري موثوق</span>،  
+      أعمل على <strong>البيع والشراء</strong> للمنتجات الأصلية ذات الجودة العالية، 
+      وأوفر لعملائي خدمات تجارية قائمة على <span class="highlight">الثقة والمصداقية</span>.
+    </p>
 
-    <!-- شعار الشركة -->
-    <img src="صور/logo.png" alt="شعار الشركة">
+    <p>
+      بخبرتي في <strong>التجارة العامة</strong>، أساعد الزبائن في الحصول على 
+      منتجاتهم المطلوبة من مصادر موثوقة، مع ضمان الجودة والأصالة.  
+      رؤيتي هي أن أكون شريكًا استراتيجيًا لكل من يبحث عن النجاح في مجال الأعمال.
+    </p>
+
+    <p>
+      نحن لا نبيع المنتجات فقط، بل نبني <span class="highlight">علاقات طويلة الأمد</span> مع عملائنا، 
+      ونضمن لهم أفضل الحلول التجارية المحلية والدولية.
+    </p>
+
+    <a href="index.html" class="btn-back">العودة إلى الصفحة الرئيسية</a>
   </div>
 
-  <a href="index.html" class="back-btn">العودة للرئيسية</a>
 </body>
 </html>
