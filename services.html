@@ -17,19 +17,16 @@
       background: #0a2a43;
       color: white;
       text-align: center;
-      padding: 30px 20px 50px;
+      padding: 30px 20px 40px;
       position: relative;
     }
-    /* تعديل الشعار ليظهر كطابع دائري صغير */
     header img {
-      width: 70px;              /* حجم ثابت صغير */
-      height: 70px;
-      border-radius: 50%;       /* دائري */
-      display: block;
-      margin: 0 auto 15px auto; /* وسط الصفحة مع مسافة صغيرة تحته */
-      box-shadow: 0 2px 8px rgba(0,0,0,0.25); /* ظل خفيف يبان رسمي */
-      border: 3px solid #fff;   /* إطار أبيض أنيق */
-      object-fit: cover;        /* يحافظ على أبعاد الصورة */
+      max-width: 60px;
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
     }
     header h1 {
       margin: 0;
@@ -87,7 +84,6 @@
 <body>
 
   <header>
-    <!-- شعار دائري مثل ختم -->
     <img src="images/logo.png" alt="شعار بوزيان سديرة">
     <h1>بوزيان سديرة - تاجر عام & وسيط تجاري موثوق</h1>
     <p>ثقة • مصداقية • جودة عالمية</p>
