@@ -3,140 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>من نحن - بوزيان سديرة</title>
+  <title>من نحن</title>
   <style>
     body {
-      margin: 0;
       font-family: "Tajawal", sans-serif;
-      background-color: #f4f6f9;
-      color: #333;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      color: #222;
+    }
+
+    header {
+      background: #0d47a1;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px;
+      max-width: 1100px;
+      margin: auto;
+      gap: 30px;
+    }
+
+    .container img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .content {
+      flex: 1;
+      font-size: 18px;
       line-height: 1.8;
     }
-    header {
-      background-color: #003366;
-      color: white;
-      padding: 15px 20px;
-      font-size: 18px;
-      font-weight: bold;
-      text-align: center;
+
+    .content h2 {
+      margin-bottom: 15px;
+      color: #0d47a1;
     }
-    .container {
-      max-width: 950px;
-      margin: 40px auto;
-      padding: 25px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-    .profile-section {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .profile-pic, .logo-pic {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin: 10px 15px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      border: 3px solid #003366;
-    }
-    .images-flex {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
-    .profile-section h1 {
-      color: #003366;
-      font-size: 26px;
-      margin-bottom: 10px;
-    }
-    .profile-section p {
-      font-size: 16px;
-      text-align: justify;
-      margin-bottom: 10px;
-    }
-    .highlight {
-      font-weight: bold;
-      color: #003366;
-    }
-    h2 {
-      color: #003366;
-      border-right: 5px solid #003366;
-      padding-right: 10px;
-      font-size: 20px;
-      margin: 25px 0 15px;
-    }
-    ul {
-      padding-right: 20px;
-    }
-    ul li {
-      margin-bottom: 8px;
-    }
-    .btn-back {
+
+    .back-btn {
       display: block;
-      text-align: center;
-      margin: 30px auto 0;
+      width: fit-content;
+      margin: 30px auto;
       padding: 12px 25px;
-      font-size: 16px;
-      background-color: #003366;
+      background: #0d47a1;
       color: white;
       text-decoration: none;
       border-radius: 8px;
+      font-weight: bold;
       transition: 0.3s;
-      width: fit-content;
     }
-    .btn-back:hover {
-      background-color: #00509e;
+
+    .back-btn:hover {
+      background: #1565c0;
     }
   </style>
 </head>
 <body>
-
   <header>من نحن</header>
 
   <div class="container">
-    <!-- القسم الشخصي + صورة الشركة -->
-    <div class="profile-section">
-      <div class="images-flex">
-        <img src="images/IMG_20250913_214745.png" alt="بوزيان سديرة" class="profile-pic">
-        <img src="images/logo.png" alt="شعار الشركة" class="logo-pic">
-      </div>
-      <h1>بوزيان سديرة</h1>
+    <!-- صورتك الشخصية -->
+    <img src="IMG_20250913_214745.png" alt="صورتي">
+
+    <div class="content">
+      <h2>تعريف بالشركة</h2>
       <p>
-        أنا <span class="highlight">تاجر عام موثق</span> و<span class="highlight">وسيط تجاري موثوق</span>،  
-        متخصص في <strong>البيع والشراء</strong> للمنتجات الأصلية ذات الجودة العالية.  
-        أعمل على مساعدة الزبائن في اقتناء منتجاتهم من مصادر موثوقة، 
-        وأضمن لهم الصفقات الآمنة والموثوقة بخبرتي في مجال التجارة العامة.
+        أنا <strong>بوزيان سديرة</strong>، تاجر عام موثق ووسيط تجاري موثوق.  
+        أعمل في مجال <strong>البيع والشراء</strong>، مع خبرة في الاستيراد والتصدير،  
+        وأسعى دائمًا لتوفير منتجات أصلية وموثوقة لزبائني.  
+        أضع خبرتي بين أيديكم لتسهيل اقتناء السلع بأمان واحترافية.
       </p>
     </div>
 
-    <!-- القسم الخاص بالشركة -->
-    <div class="company-section">
-      <h2>عن شركتنا</h2>
-      <p>
-        تأسست <span class="highlight">شركة بوزيان سديرة</span> على مبادئ 
-        <strong>الثقة، المصداقية، والجودة</strong>.  
-        نحن نقدم خدمات تجارية متكاملة تشمل:
-      </p>
-      <ul>
-        <li>شراء وبيع المنتجات الأصلية.</li>
-        <li>الوساطة التجارية لتأمين صفقات موثوقة.</li>
-        <li>توفير المنتجات المطلوبة للزبائن حسب الطلب.</li>
-        <li>تقديم الاستشارات والخبرة في مجال التجارة العامة.</li>
-      </ul>
-
-      <p>
-        رؤيتنا هي أن نكون <span class="highlight">شريكًا استراتيجيًا</span> لكل من يبحث عن النجاح في مجال الأعمال،  
-        وأن نواصل تعزيز مكانتنا كـ <strong>تاجر عام ووسيط تجاري موثوق</strong> على المستويين المحلي والدولي.
-      </p>
-    </div>
-
-    <a href="index.html" class="btn-back">العودة إلى الصفحة الرئيسية</a>
+    <!-- شعار الشركة -->
+    <img src="logo.png" alt="شعار الشركة">
   </div>
 
+  <a href="index.html" class="back-btn">العودة للرئيسية</a>
 </body>
 </html>
