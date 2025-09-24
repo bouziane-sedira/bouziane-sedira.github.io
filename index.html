@@ -59,9 +59,34 @@
     .brand img{width:56px;height:56px;object-fit:contain;border-radius:8px;background:#fff;padding:6px}
     .brand h1{margin:0;font-size:20px;font-weight:800}
     .sub{opacity:.95;font-size:13px}
-    nav.primary{margin-top:12px;text-align:center}
-    nav.primary a{color:#fff;text-decoration:none;margin:0 10px;font-weight:700;font-size:14px}
-    main{max-width:var(--maxw);margin:18px auto;padding:0 16px}
+   /* ====== Navigation (منظم وجاهز) ====== */
+nav.primary {
+  display: flex;
+  justify-content: space-between; /* يخلي العربية يمين والإنجليزية يسار */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+nav.primary .nav-group {
+  display: flex;
+  gap: 14px;
+}
+
+nav.primary a {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff; /* أبيض فوق الهيدر */
+  transition: 0.3s;
+}
+
+nav.primary a:hover {
+  color: #ffb300; /* ذهبي عند المرور */
+}
+   
+        main{max-width:var(--maxw);margin:18px auto;padding:0 16px}
     .hero{background:#fff;border-radius:12px;padding:20px;box-shadow:0 8px 30px rgba(13,71,161,0.06);display:flex;gap:18px;align-items:center;flex-wrap:wrap}
     .hero-left{flex:1 1 360px}
     .hero-right{flex:0 1 320px;text-align:center}
