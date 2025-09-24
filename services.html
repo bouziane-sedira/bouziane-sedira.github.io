@@ -8,116 +8,165 @@
     body {
       margin: 0;
       font-family: "Cairo", Tahoma, Arial, sans-serif;
-      background: #f7f8fb;
+      background: #f4f6f9;
       color: #222;
       line-height: 1.8;
     }
 
+    /* Header */
     header {
-      background: #ffffff;
-      border-bottom: 2px solid #0d47a1;
-      color: #0d47a1;
-      padding: 15px;
+      background: linear-gradient(90deg, #0d47a1, #1565c0);
+      color: #fff;
+      padding: 20px;
       text-align: center;
+      position: relative;
     }
 
-    nav {
-      margin-top: 10px;
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    header p {
+      margin: 8px 0 0;
+      font-size: 16px;
+      color: #e3f2fd;
+    }
+
+    .logo {
+      position: absolute;
+      left: 20px;
+      top: 15px;
+      font-size: 28px;
     }
 
     nav a {
       display: inline-block;
-      background: #0d47a1;
-      color: #fff;
-      padding: 10px 18px;
-      margin: 5px;
-      border-radius: 8px;
+      background: #ffca28;
+      color: #0d47a1;
+      padding: 10px 20px;
+      margin: 15px 0;
+      border-radius: 25px;
       text-decoration: none;
       font-weight: bold;
       transition: 0.3s ease;
     }
 
     nav a:hover {
-      background: #1565c0;
+      background: #ffc107;
       transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
+    /* Main Content */
     main {
-      max-width: 900px;
-      margin: 20px auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-
-    h1, h2 {
-      color: #0d47a1;
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
     .highlight {
-      background: #e3f2fd;
-      padding: 12px;
-      border-radius: 8px;
-      margin: 15px 0;
-      font-weight: bold;
-      color: #0d47a1;
+      background: #fff3cd;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px 0;
+      border: 1px solid #ffeeba;
       text-align: center;
+      font-weight: bold;
+      color: #856404;
+      font-size: 18px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
     }
 
-    ul li::before {
-      content: "✔️ ";
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .card h3 {
+      margin-top: 15px;
       color: #0d47a1;
     }
 
+    .card p {
+      font-size: 15px;
+      color: #555;
+    }
+
+    .icon {
+      font-size: 40px;
+      color: #1565c0;
+    }
+
+    /* Footer */
     footer {
-      background: #ffffff;
-      border-top: 2px solid #0d47a1;
-      color: #0d47a1;
+      background: #0d47a1;
+      color: #fff;
       text-align: center;
       padding: 15px;
-      margin-top: 20px;
+      margin-top: 40px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
   <header>
+    <div class="logo">🌐</div>
     <h1>بوزيان سديرة</h1>
-    <p>وسيط تجاري موثوق · تاجر عام موثق</p>
+    <p>تاجر عام موثق · بيع وشراء منتجات أصلية · وساطة تجارية بخبرة</p>
     <nav>
-      <a href="index.html">الرئيسية</a>
-      <a href="services.html">خدماتنا</a>
-      <a href="about.html">من نحن</a>
-      <a href="projects.html">مشاريعنا</a>
-      <a href="privacy.html">سياسة الخصوصية</a>
-      <a href="terms.html">الشروط والأحكام</a>
-      <a href="contact.html">اتصل بنا</a>
+      <a href="index.html">⬅ العودة للرئيسية</a>
     </nav>
   </header>
 
   <main>
-    <h1>خدماتنا</h1>
     <div class="highlight">
-      نحن وسيط تجاري موثوق وتاجر عام معتمد، نوفر كل المنتجات بجودة عالية وأسعار تنافسية.
+      نضع خبرتنا العالمية في خدمتكم: بيع وشراء المنتجات الأصلية، وتقديم وساطة تجارية موثوقة تضمن لكم الجودة والثقة.
     </div>
-    <p>
-      نقدم مجموعة من الخدمات في مجال التجارة العامة والاستيراد والتصدير، مع التزامنا التام بالشفافية والمصداقية في جميع تعاملاتنا.
-    </p>
-    
-    <h2>الخدمات الرئيسية</h2>
-    <ul>
-      <li>توفير المنتجات بالجملة والتجزئة.</li>
-      <li>الاستيراد والتصدير الدولي باسمنا التجاري.</li>
-      <li>ضمان الجودة العالية والمطابقة للمعايير.</li>
-      <li>خدمات شحن وتوصيل موثوقة وسريعة.</li>
-    </ul>
+
+    <section class="services-grid">
+      <div class="card">
+        <div class="icon">🛒</div>
+        <h3>البيع والشراء</h3>
+        <p>نوفر منتجات أصلية وموثوقة بجودة عالية، مع التزام بالشفافية والمصداقية في كل معاملة.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🤝</div>
+        <h3>وساطة تجارية</h3>
+        <p>نساعد عملاءنا بخبرتنا في اقتناء السلع الأصلية والتفاوض على أفضل الأسعار لصالحهم.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">📦</div>
+        <h3>توفير المنتجات</h3>
+        <p>خدمات شاملة لتوفير منتجات متنوعة تلبي احتياجات العملاء بأفضل المواصفات.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🌍</div>
+        <h3>ثقة ومصداقية</h3>
+        <p>نلتزم بالمعايير العالمية في جميع تعاملاتنا لنضمن لعملائنا تجربة تجارية مميزة.</p>
+      </div>
+    </section>
   </main>
 
   <footer>
