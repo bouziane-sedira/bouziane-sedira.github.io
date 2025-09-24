@@ -3,174 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>خدماتنا - بوزيان سديرة</title>
+  <title>حولنا - بوزيان سديرة</title>
   <style>
     body {
+      font-family: "Tahoma", sans-serif;
       margin: 0;
-      font-family: "Cairo", Tahoma, Arial, sans-serif;
-      background: #f4f6f9;
+      padding: 0;
+      background-color: #f9f9f9;
       color: #222;
       line-height: 1.8;
     }
-
-    /* Header */
     header {
-      background: linear-gradient(90deg, #0d47a1, #1565c0);
-      color: #fff;
-      padding: 20px;
+      background: #0a2a43;
+      color: white;
       text-align: center;
-      position: relative;
+      padding: 40px 20px;
     }
-
     header h1 {
       margin: 0;
-      font-size: 28px;
-      font-weight: bold;
+      font-size: 2rem;
+      letter-spacing: 1px;
     }
-
-    header p {
-      margin: 8px 0 0;
-      font-size: 16px;
-      color: #e3f2fd;
-    }
-
-    .logo {
-      position: absolute;
-      left: 20px;
-      top: 15px;
-      font-size: 28px;
-    }
-
-    nav a {
-      display: inline-block;
-      background: #ffca28;
-      color: #0d47a1;
-      padding: 10px 20px;
-      margin: 15px 0;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s ease;
-    }
-
-    nav a:hover {
-      background: #ffc107;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-
-    /* Main Content */
-    main {
-      max-width: 1100px;
+    .container {
+      max-width: 900px;
       margin: 40px auto;
-      padding: 0 20px;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     }
-
-    .highlight {
-      background: #fff3cd;
-      padding: 15px;
-      border-radius: 10px;
-      margin: 20px 0;
-      border: 1px solid #ffeeba;
-      text-align: center;
-      font-weight: bold;
-      color: #856404;
-      font-size: 18px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
+    h2 {
+      color: #0a2a43;
+      border-right: 5px solid #0a2a43;
+      padding-right: 10px;
       margin-top: 30px;
+      font-size: 1.4rem;
     }
-
-    .card {
-      background: #fff;
-      border-radius: 15px;
-      padding: 25px;
-      text-align: center;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    p {
+      font-size: 1rem;
+      margin: 10px 0;
+    }
+    .btn-home {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+      background: #0a2a43;
+      border-radius: 6px;
+      text-decoration: none;
       transition: 0.3s;
     }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    .btn-home:hover {
+      background: #144d75;
     }
-
-    .card h3 {
-      margin-top: 15px;
-      color: #0d47a1;
-    }
-
-    .card p {
-      font-size: 15px;
-      color: #555;
-    }
-
-    .icon {
-      font-size: 40px;
-      color: #1565c0;
-    }
-
-    /* Footer */
     footer {
-      background: #0d47a1;
-      color: #fff;
       text-align: center;
-      padding: 15px;
-      margin-top: 40px;
-      font-size: 14px;
+      margin-top: 50px;
+      padding: 20px;
+      font-size: 0.9rem;
+      background: #eee;
+      color: #555;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo">🌐</div>
-    <h1>بوزيان سديرة</h1>
-    <p>تاجر عام موثق · بيع وشراء منتجات أصلية · وساطة تجارية بخبرة</p>
-    <nav>
-      <a href="index.html">⬅ العودة للرئيسية</a>
-    </nav>
+    <h1>بوزيان سديرة - تاجر عام موثق</h1>
+    <p>ثقة • مصداقية • جودة عالمية</p>
   </header>
 
-  <main>
-    <div class="highlight">
-      نضع خبرتنا العالمية في خدمتكم: بيع وشراء المنتجات الأصلية، وتقديم وساطة تجارية موثوقة تضمن لكم الجودة والثقة.
-    </div>
+  <div class="container">
+    <h2>من نحن</h2>
+    <p>
+      نحن مؤسسة تجارية موثوقة تعمل في مجال <strong>البيع والشراء</strong> للمنتجات الأصلية ذات الجودة العالية.  
+      بفضل خبرتنا الطويلة في التجارة العامة، نضمن لعملائنا أفضل الصفقات وأعلى معايير الجودة.
+    </p>
 
-    <section class="services-grid">
-      <div class="card">
-        <div class="icon">🛒</div>
-        <h3>البيع والشراء</h3>
-        <p>نوفر منتجات أصلية وموثوقة بجودة عالية، مع التزام بالشفافية والمصداقية في كل معاملة.</p>
-      </div>
+    <h2>رؤيتنا</h2>
+    <p>
+      نطمح إلى أن نكون شريكك التجاري الأول، حيث نوفر لك منتجات متنوعة بأسعار تنافسية،  
+      مع التزام تام بالمصداقية والشفافية في جميع تعاملاتنا.
+    </p>
 
-      <div class="card">
-        <div class="icon">🤝</div>
-        <h3>وساطة تجارية</h3>
-        <p>نساعد عملاءنا بخبرتنا في اقتناء السلع الأصلية والتفاوض على أفضل الأسعار لصالحهم.</p>
-      </div>
+    <h2>خدماتنا</h2>
+    <p>
+      • البيع والشراء للمنتجات الأصلية. <br>
+      • توفير المنتجات للزبائن حسب الطلب. <br>
+      • المساعدة بخبرتنا كـ <strong>تاجر عام</strong> في اقتناء منتجات موثوقة ومعتمدة. <br>
+      • تقديم حلول تجارية آمنة وسريعة.
+    </p>
 
-      <div class="card">
-        <div class="icon">📦</div>
-        <h3>توفير المنتجات</h3>
-        <p>خدمات شاملة لتوفير منتجات متنوعة تلبي احتياجات العملاء بأفضل المواصفات.</p>
-      </div>
-
-      <div class="card">
-        <div class="icon">🌍</div>
-        <h3>ثقة ومصداقية</h3>
-        <p>نلتزم بالمعايير العالمية في جميع تعاملاتنا لنضمن لعملائنا تجربة تجارية مميزة.</p>
-      </div>
-    </section>
-  </main>
+    <a href="index.html" class="btn-home">الرجوع إلى الصفحة الرئيسية</a>
+  </div>
 
   <footer>
-    <p>© 2025 بوزيان سديرة - جميع الحقوق محفوظة</p>
+    © 2025 بوزيان سديرة - جميع الحقوق محفوظة
   </footer>
 
 </body>
