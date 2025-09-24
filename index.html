@@ -174,7 +174,7 @@ nav.primary a:hover {
 
         <p class="muted" style="margin-top:8px"><i class="fa-solid fa-clock"></i> خدمة عملاء متاحة على مدار الأسبوع — اتصل الآن</p>
       </div>
-    </section>
+   
 
     <!-- الخدمات -->
     <section id="services" style="margin-top:18px">
@@ -257,26 +257,6 @@ nav.primary a:hover {
       </p>
     </div>
   </footer>
-
-  <script>
-    const translations = {
-      ar:{lang:'ar',dir:'rtl',title:'بوزيان سديرة — تجارة واستيراد موثوقة',heroLead:'نركّز على شراء وبيع السلع بكفاءة، بناء سلاسل توريد قوية، وتأمين صفقات مربحة داخل الجزائر وخارجها.',ctaMail:'اطلب عرض أسعار',whatsappText:'تواصل عبر واتساب'},
-      en:{lang:'en',dir:'ltr',title:'Bouziane Sedira — Trusted Trading & Import',heroLead:'We focus on efficient buying & selling, building solid supply chains and securing profitable deals inside Algeria and abroad.',ctaMail:'Request Quote',whatsappText:'Contact via WhatsApp'},
-      fr:{lang:'fr',dir:'ltr',title:'Bouziane Sedira — Commerce & Import Fiable',heroLead:"Nous assurons l'achat et la vente efficaces, la constitution de chaînes d'approvisionnement solides et la sécurisation d'accords rentables en Algérie et à l'international.",ctaMail:'Demander un devis',whatsappText:'Contactez sur WhatsApp'}
-    };
-    function setLang(code){
-      const t = translations[code]||translations.ar;
-      document.documentElement.lang=t.lang;document.documentElement.dir=t.dir;
-      document.getElementById('site-title').textContent=(t.lang==='ar')?'بوزيان سديرة':'Bouziane Sedira';
-      document.getElementById('hero-lead').textContent=t.heroLead;
-      document.getElementById('contact-cta').textContent=t.ctaMail;
-      document.getElementById('whatsapp-btn').textContent=t.whatsappText;
-      try{localStorage.setItem('site_lang',code);}catch(e){}
-      if(t.dir==='rtl'){document.body.style.textAlign='right';}else{document.body.style.textAlign='left';}
-    }
-    const sel=document.getElementById('lang-select');
-    sel.addEventListener('change',(e)=>setLang(e.target.value));
-    document.addEventListener('DOMContentLoaded',()=>{try{const l=localStorage.getItem('site_lang')||'ar';sel.value=l;setLang(l);}catch(e){setLang('ar');}});
  </script>
   <!-- تحسين ظهور الاسم بالعربية في محركات البحث -->
 
