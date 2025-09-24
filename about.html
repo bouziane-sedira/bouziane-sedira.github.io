@@ -27,25 +27,40 @@
       background: white;
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      text-align: center;
     }
-    .logo {
-      width: 100px;
-      height: 100px;
+    .profile-section {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .profile-pic {
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      margin: 0 auto 15px auto;
-      display: block;
+      margin-bottom: 15px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      border: 3px solid #003366;
     }
-    h1 {
+    .profile-section h1 {
       color: #003366;
       font-size: 26px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
-    p {
+    .profile-section p {
       font-size: 16px;
       text-align: justify;
+      margin-bottom: 10px;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #003366;
+    }
+    h2 {
+      color: #003366;
+      border-right: 5px solid #003366;
+      padding-right: 10px;
+      font-size: 20px;
+      margin: 25px 0 15px;
     }
     .btn-back {
       display: block;
@@ -70,20 +85,38 @@
   <header>من نحن</header>
 
   <div class="container">
-    <!-- شعار الشركة -->
-    <img src="images/logo.png" alt="شعار الشركة" class="logo">
+    <!-- القسم الشخصي -->
+    <div class="profile-section">
+      <img src="images/IMG_20250913_214745.png" alt="بوزيان سديرة" class="profile-pic">
+      <h1>بوزيان سديرة</h1>
+      <p>
+        أنا <span class="highlight">تاجر عام موثق</span> و<span class="highlight">وسيط تجاري موثوق</span>،  
+        متخصص في <strong>البيع والشراء</strong> للمنتجات الأصلية ذات الجودة العالية.  
+        أعمل على مساعدة الزبائن في اقتناء منتجاتهم من مصادر موثوقة، 
+        وأضمن لهم الصفقات الآمنة والموثوقة بخبرتي في مجال التجارة العامة.
+      </p>
+    </div>
 
-    <h1>من نحن</h1>
-    <p>
-      بوزيان سديرة، <strong>تاجر عام موثق</strong> و <strong>وسيط تجاري موثوق</strong>، 
-      نقدم خدمات البيع والشراء للمنتجات الأصلية ذات الجودة العالية.  
-      نساعد عملاءنا بخبرتنا في اختيار واقتناء منتجات معتمدة، ونوفر لهم الثقة 
-      والمصداقية في كل صفقة تجارية.
-    </p>
-    <p>
-      نضع الجودة والشفافية أساسًا لأعمالنا، ونهدف إلى بناء علاقات طويلة الأمد 
-      مع عملائنا على المستوى المحلي والدولي.
-    </p>
+    <!-- القسم الخاص بالشركة -->
+    <div class="company-section">
+      <h2>عن شركتنا</h2>
+      <p>
+        تأسست <span class="highlight">شركة بوزيان سديرة</span> على مبادئ 
+        <strong>الثقة، المصداقية، والجودة</strong>.  
+        نحن نقدم خدمات تجارية متكاملة تشمل:
+      </p>
+      <ul>
+        <li>شراء وبيع المنتجات الأصلية.</li>
+        <li>الوساطة التجارية لتأمين صفقات موثوقة.</li>
+        <li>توفير المنتجات المطلوبة للزبائن حسب الطلب.</li>
+        <li>تقديم الاستشارات والخبرة في مجال التجارة العامة.</li>
+      </ul>
+
+      <p>
+        رؤيتنا هي أن نكون <span class="highlight">شريكًا استراتيجيًا</span> لكل من يبحث عن النجاح في مجال الأعمال،  
+        وأن نواصل تعزيز مكانتنا كـ <strong>تاجر عام ووسيط تجاري موثوق</strong> على المستويين المحلي والدولي.
+      </p>
+    </div>
 
     <a href="index.html" class="btn-back">العودة إلى الصفحة الرئيسية</a>
   </div>
